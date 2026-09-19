@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quotation</title>
+  <!-- CSS_PLACEHOLDER -->
+</head>
+<body>
+  <div class="watermark">
+    <img src="{{LOGO_SRC}}" alt="Watermark" />
+  </div>
+  <div class="page-container">
+    <header class="header">
+      <div class="logo">
+        <img src="{{LOGO_SRC}}" alt="MAA Solar" style="width: 250px; max-height: 100px; object-fit: contain;" />
+      </div>
+      <div class="company-details">
+        <h1 class="company-name">{{COMPANY_NAME}}</h1>
+        <p class="company-address">{{COMPANY_ADDRESS}}</p>
+        <p class="company-contact">M: {{COMPANY_PHONE}} | {{COMPANY_EMAIL}} | {{COMPANY_WEBSITE}}</p>
+        <p class="company-gst"><strong>GST: {{COMPANY_GST}} | TAN: {{COMPANY_ITAN}} | LLPIN: {{COMPANY_LLPIN}}</strong></p>
+      </div>
+    </header>
+    <div class="divider"></div>
+    <div class="quotation-title">QUOTATION</div>
+    
+    <div class="meta-info">
+      <div class="quote-no"><strong>Quote No: {{QUOTE_NO}}</strong></div>
+      <div class="date"><strong>Date: {{DATE}}</strong></div>
+    </div>
+    
+    <div class="customer-info">
+      <p><strong>To,</strong><br>{{CUSTOMER_NAME}}</p>
+    </div>
+    
+    <div class="intro-text">
+      <p>Dear Sir/ Madam,</p>
+      <p>We are pleased to submit our offer for installation of a <strong>{{SYSTEM_CAPACITY}}{{CAPACITY_UNIT}} {{DCR_TYPE_TEXT}}</strong> at your premises.</p>
+    </div>
+    
+    <table class="quote-table">
+      <thead>
+        <tr>
+          <th style="width: 5%">S.No</th>
+          <th style="width: 45%">Item Description</th>
+          <th style="width: 5%">Qty</th>
+          <th style="width: 10%">Rate</th>
+          <th style="width: 10%">Taxable</th>
+          <th style="width: 5%">GST %</th>
+          <th style="width: 10%">GST Amount</th>
+          <th style="width: 10%">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1</strong></td>
+          <td><strong>{{DESCRIPTION}}</strong></td>
+          <td>{{QTY}}</td>
+          <td>{{RATE}}</td>
+          <td>{{TAXABLE}}</td>
+          <td>{{GST_PERCENT}}</td>
+          <td>{{GST_AMOUNT}}</td>
+          <td>{{AMOUNT}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="text-right"><strong>Total Qty: 1</strong></td>
+          <td colspan="4" class="text-right"><strong>Grand Total: {{GRAND_TOTAL}}</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+    
+    <div class="terms">
+      <strong>Terms & Conditions:</strong>
+      {{TERMS_CONDITIONS}}
+    </div>
+    
+    <div class="footer-blocks">
+      <div class="bank-details">
+        <p><strong>Bank Details:</strong></p>
+        <table class="bank-table">
+          <tr><td><strong>Bank Name</strong></td><td><strong>: {{BANK_NAME}}</strong></td></tr>
+          <tr><td><strong>Account Number</strong></td><td><strong>: {{BANK_ACCOUNT}}</strong></td></tr>
+          <tr><td><strong>IFSC Code</strong></td><td><strong>: {{BANK_IFSC}}</strong></td></tr>
+          <tr><td><strong>Branch Name</strong></td><td><strong>: {{BANK_BRANCH}}</strong></td></tr>
+        </table>
+        
+        <div class="notes">
+          <p><strong>NOTE:</strong> These Special prices are applicable only for, {{SPECIAL_PRICE_NOTE}}</p>
+          <p><strong>Submitted By:</strong> {{SUBMITTED_BY}}</p>
+          <p>{{PHONE_NOTE}}</p>
+          <p>{{EMAIL_NOTE}}</p>
+        </div>
+      </div>
+      <div class="signature">
+        <p><strong>Yours Faithfully,</strong><br>for Maasolar Energy Solutions.</p>
+        <img src="{{SEAL_SRC}}" alt="Seal & Signature" style="max-width: 120px; max-height: 120px; object-fit: contain; mix-blend-mode: multiply; margin: -10px auto; display: block; position: relative; z-index: -1;" />
+        <p><strong>Authorised Signatory</strong></p>
+      </div>
+    </div>
+    
+    <div class="registration-office" style="margin-top: 40px; border-top: 1px solid #ccc; text-align: center; padding-top: 10px; font-size: 10px;">
+      {{REGISTRATION_OFFICE}}
+    </div>
+  </div>
+</body>
+</html>

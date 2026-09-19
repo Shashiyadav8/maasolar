@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-container {
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+.watermark img {
+  width: 500px;
+  max-width: 80vw;
+  object-fit: contain;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.dummy-logo {
+  width: 150px;
+  height: 60px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  font-weight: bold;
+}
+
+.company-details {
+  text-align: right;
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+.company-name {
+  color: #d11218; /* Red from the reference */
+  font-size: 20px;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.company-address, .company-contact, .company-gst {
+  margin: 2px 0;
+  font-size: 10px;
+}
+
+.divider {
+  border-top: 2px solid #000;
+  margin: 10px 0;
+}
+
+.quotation-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.meta-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.customer-info {
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  margin-bottom: 15px;
+}
+
+.quote-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.quote-table th, .quote-table td {
+  border: 1px solid #000;
+  padding: 8px 4px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.quote-table th {
+  font-weight: bold;
+}
+
+.text-right {
+  text-align: right !important;
+  padding-right: 15px !important;
+}
+
+.terms {
+  margin-bottom: 30px;
+}
+
+.terms div {
+  margin-bottom: 3px;
+}
+
+.footer-blocks {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.bank-details {
+  width: 60%;
+}
+
+.bank-table {
+  width: 100%;
+  border: none;
+}
+
+.bank-table td {
+  padding: 2px 0;
+}
+
+.notes {
+  margin-top: 20px;
+}
+
+.notes p {
+  margin: 2px 0;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.signature {
+  width: 35%;
+  text-align: center;
+  position: relative;
+}
+
+.dummy-seal {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  font-size: 10px;
+  color: #666;
+}
+
+.registration-office {
+  border-top: 1px solid #ccc;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 10px;
+  margin-top: 50px;
+}
