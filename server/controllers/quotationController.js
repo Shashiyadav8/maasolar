@@ -4,15 +4,24 @@ const { generateQuotationPDF } = require('../services/pdfService');
 exports.createQuotation = async (req, res, next) => {
   try {
     // Auto-generate quotation number
-    const lastQuotation = await Quotation.findOne().sort({ createdAt: -1 });
-    let nextNum = 132; // Default starting number
-    if (lastQuotation && lastQuotation.quotationNumber) {
-      // Extract number specifically after MSES/ to avoid issues with -COPY suffixes
-      const match = lastQuotation.quotationNumber.match(/MSES\/(\d+)/);
-      if (match) {
-        nextNum = parseInt(match[1]) + 1;
+    // We must find the absolute highest number across ALL quotations,
+    // otherwise duplicating old quotes will mess up the sequence.
+    const allQuotations = await Quotation.find({}, 'quotationNumber');
+    let maxNum = 131; // Default starting number - 1 (so first is 132)
+    
+    allQuotations.forEach(q => {
+      if (q.quotationNumber) {
+        const match = q.quotationNumber.match(/MSES\/(\d+)/);
+        if (match) {
+          const num = parseInt(match[1]);
+          if (num > maxNum) {
+            maxNum = num;
+          }
+        }
       }
-    }
+    });
+    
+    let nextNum = maxNum + 1;
     const currentYear = new Date().getFullYear();
     const nextYearStr = (currentYear + 1).toString().slice(-2);
     const prefix = `QUOTE/${currentYear.toString().slice(-2)}-${nextYearStr}/MSES/`;
