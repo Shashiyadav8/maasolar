@@ -129,7 +129,13 @@ exports.generateQuotationPDF = async (quotation) => {
     ] 
   });
   const page = await browser.newPage();
-  await page.setContent(html, { waitUntil: 'networkidle0' });
+  
+  // Increase timeout to 60s for Render free tier and change to 'load' 
+  // since we don't have external network requests to wait for.
+  await page.setContent(html, { 
+    waitUntil: 'load',
+    timeout: 60000 
+  });
   
   const pdfBuffer = await page.pdf({
     format: 'A4',
