@@ -3,6 +3,12 @@ const fs = require('fs').promises;
 const path = require('path');
 const Settings = require('../models/Settings');
 
+// On Render, we installed Puppeteer to this specific cache directory during the build step.
+// We must tell Puppeteer to look here at runtime to find the Chrome executable.
+if (process.env.RENDER) {
+  process.env.PUPPETEER_CACHE_DIR = '/opt/render/project/puppeteer';
+}
+
 const formatCurrency = (amount) => {
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',
