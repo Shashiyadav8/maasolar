@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/maa-solar-logo.jpeg';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -30,8 +31,9 @@ const Login = () => {
     <div className="container-main" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
       <div className="glass-card" style={{ width: '100%', maxWidth: '400px', padding: '40px 30px' }}>
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-          <h2 style={{ color: 'var(--text-primary)', marginTop: '10px' }}>Welcome Back</h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Please log in to continue.</p>
+          <img src={logo} alt="MAA Solar" style={{ height: '60px', width: 'auto', marginBottom: '15px', borderRadius: '4px' }} />
+          <h2 style={{ color: 'var(--text-primary)', fontSize: '1.4rem' }}>MAA Solar Quotation Generator</h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '10px' }}>Please log in to continue.</p>
         </div>
 
         {error && (
