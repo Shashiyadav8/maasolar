@@ -7,7 +7,8 @@ exports.createQuotation = async (req, res, next) => {
     const lastQuotation = await Quotation.findOne().sort({ createdAt: -1 });
     let nextNum = 132; // Default starting number
     if (lastQuotation && lastQuotation.quotationNumber) {
-      const match = lastQuotation.quotationNumber.match(/(\d+)$/);
+      // Extract number specifically after MSES/ to avoid issues with -COPY suffixes
+      const match = lastQuotation.quotationNumber.match(/MSES\/(\d+)/);
       if (match) {
         nextNum = parseInt(match[1]) + 1;
       }
